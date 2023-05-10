@@ -1,0 +1,92 @@
+/* Estilo para el cuerpo de la página */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo para el encabezado */
+  h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo para el formulario */
+  form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  /* Estilo para los campos del formulario */
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Estilo para el campo de texto del formulario */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="date"],
+  form select,
+  form textarea {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* Estilo para el botón del formulario */
+  form input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+  
+  /* Estilo para el mensaje de éxito del formulario */
+  .success {
+    background-color: #D4EDDA;
+    border: 1px solid #C3E6CB;
+    color: #155724;
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo para el mensaje de error del formulario */
+  .error {
+    background-color: #F8D7DA;
+    border: 1px solid #F5C6CB;
+    color: #721C24;
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilo para la tabla de registros */
+  table {
+    border-collapse: collapse;
+    margin: 10px auto;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  /* Estilo para las celdas de la tabla de registros */
+  td, th {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
