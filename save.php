@@ -1,14 +1,14 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Get form data
+// Obtener datos del formulario
 $company_name = $_POST['company_name'];
 $contact_name = $_POST['contact_name'];
 $contact_title = $_POST['contact_title'];
 $birth_date = $_POST['birth_date'];
 $country = $_POST['country'];
-$region = $_POST['region'];
 $state = $_POST['state'];
 $city = $_POST['city'];
 $address = $_POST['address'];
@@ -17,43 +17,36 @@ $phone_number = $_POST['phone_number'];
 $fax = $_POST['fax'];
 $credit_limit = $_POST['credit_limit'];
 
-
-
-
-// Generate id
+// Generar ID
 $id = strtoupper(substr($company_name, 0, 3)) . rand(1000, 9999);
 
-// Connect to SQL Server database
-$serverName = "DESKTOP-DNC83DC\sqlexpress";
-$connectionOptions = array(
-    "Database" => "CeleProject",
-    "Uid" => "DESKTOP-DNC83DC",
-    "PWD" => ""
-);
-$conn = sqlsrv_connect($serverName, $connectionOptions);
+// Conectar a la base de datos
+$host = "localhost";
+$dbname = "celeproject";
+$user = "root";
+$password = "";
 
-if (!$conn) {
-    die("Connection failed: " . sqlsrv_errors());
+$conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+
+if ($conn === false) {
+    die("Connection failed.");
 }
 
-// Insert data into database
-$sql = "INSERT INTO registrations (id, company_name, contact_name, contact_title, birth_date, country, region, state, city, address, postal_code, phone_number, fax, credit_limit ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-$params = array($id, $company_name, $contact_name, $contact_title, $birth_date, $country, $region, $state, $city, $address, $postal_code);
-$stmt = sqlsrv_prepare($conn, $sql, $params);
+// Insertar datos en la base de datos
+$sql = "INSERT INTO customers (id, company_name, contact_name, contact_title, birth_date, country, state, city, address, postal_code, phone_number, fax, credit_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$id, $company_name, $contact_name, $contact_title, $birth_date, $country, $state, $city, $address, $postal_code, $phone_number, $fax, $credit_limit]);
 
-if (!$stmt) {
-    die("Statement preparation failed: " . sqlsrv_errors());
+
+
+
+if ($stmt === false) {
+    die("ERROR: Could not prepare/execute query: $sql.");
 }
 
-if (sqlsrv_execute($stmt) === false) {
-    die("Statement execution failed: " . sqlsrv_errors());
-}
+$conn = null;
 
-// Close database connection
-sqlsrv_free_stmt($stmt);
-sqlsrv_close($conn);
-
-// Redirect to success page
-header('Location: success.html');
+header("Location: view.php");
+exit();
 
 ?>

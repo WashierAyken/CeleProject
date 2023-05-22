@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>Formulario de Registro de Usuarios</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
 </head>
 <body>
 <div class="container">
     <h1>Formulario de Registro</h1>
-    <form method="POST" action="save.php">
+    <form method="post" action="save.php" style="border: 1px skyblue;">
         <div class="form-group">
             <label for="company_name">Company Name:</label>
             <input type="text" id="company_name" name="company_name" required>
@@ -18,7 +20,7 @@
             <input type="text" id="contact_name" name="contact_name" required>
         </div>
         <div class="form-group">
-            <label for="contact_title">Título del Contact:</label>
+            <label for="contact_title">Título del Contacto:</label>
             <input type="text" id="contact_title" name="contact_title" required>
         </div>
         <div class="form-group">
@@ -68,12 +70,10 @@
             <label for="credit_limit">Limite de crédito:</label>
             <input type="text" id="credit_limit" name="credit_limit" required>
         </div>
-        <input type="hidden" id="id" name="id">
         <div class="form-group">
-            <button type="submit">Save</button>
+            <button type="submit" id="save-btn">Save</button>
         </div>
     </form>
 </div>
-<script src="generate_id.js"></script>
 </body>
 </html>
