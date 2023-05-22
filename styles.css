@@ -89,4 +89,38 @@ body {
     padding: 10px;
     text-align: left;
   }
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li {
+    margin-right: 10px;
+}
+
+.menu li a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #eee;
+}
+
   
