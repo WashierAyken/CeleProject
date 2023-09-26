@@ -1,4 +1,4 @@
-# CRUD PRO
+# My PHP CRUD Project 🐘
 FORM IN PHP.
 
 I have created a CRUD project in PHP that allows me to manage my contacts online. It is a web application that lets me add, view, edit, and delete contacts from a MySQL database. I have used PDO to connect to the database and execute SQL queries that perform the CRUD operations. I have also used HTML forms and tables to display the data and collect user input. I have implemented validation rules and error handling to ensure the data integrity and user experience.
